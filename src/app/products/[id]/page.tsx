@@ -2,7 +2,7 @@ import ProductDetail from "@/components/products/ProductDetail";
 import ProductsList from "@/components/products/ProductsList";
 import React from "react";
 
-const Product = async (props) => {
+const Product = async (props: { params: { id: any; }; }) => {
   const { id } = props.params;
 
   const response = await fetch(
