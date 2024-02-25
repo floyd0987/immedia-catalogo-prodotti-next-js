@@ -2,7 +2,7 @@ import React from 'react'
 
 const SortBar = () => {
   return (
-    <div className='flex gap-6 text-xs border-b py-2 my-8 font-bold'>
+    <div className='hidden md:flex flex-col md:flex-row gap-6 text-xs border-b py-2 my-8 font-bold'>
 
         <div>ORDINA PER:</div>
 

@@ -17,7 +17,7 @@ const getProducts = async (categoryId: any, price_min: any, price_max: any, page
     const queryString = [categoryIdQueryString, priceRangeMinQueryString, priceRangeMaxQueryString, paginationQueryString].filter(Boolean).join('&');
     const url = "https://api.escuelajs.co/api/v1/products/" + (queryString ? `?${queryString}` : '')
 
-    const response = await fetch(url);
+    const response = await fetch(url, { cache: 'no-store' });
     const data = await response.json();
 
     return data

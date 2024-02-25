@@ -35,8 +35,8 @@ const PriceRangeFilter = () => {
   }, [priceMin, priceMax]);
 
   return (
-    <div className="flex flex-row">
-      <div className="basis-1/2 mr-4">
+    <div className="flex flex-col md:flex-row">
+      <div className="mb-4 md:mb-0 w-full md:w-auto mr-4">
         <Select onValueChange={(value) => setPriceMin(Number(value))}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Prezzo minimo" />
@@ -51,7 +51,7 @@ const PriceRangeFilter = () => {
         </Select>
       </div>
 
-      <div className="basis-1/2">
+      <div className="w-full md:w-auto">
         <Select onValueChange={(value) => setPriceMax(Number(value))}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Prezzo massimo" />

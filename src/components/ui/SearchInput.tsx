@@ -8,6 +8,7 @@ const SearchInput = () => {
     return (
         <div className="relative">
             <input
+                style={{ width: '350px' }}
                 type="text"
                 placeholder="Cosa stai cercando?"
                 className="border border-gray-300 rounded-md px-4 py-2 pr-10 focus:outline-none focus:ring focus:border-blue-300"

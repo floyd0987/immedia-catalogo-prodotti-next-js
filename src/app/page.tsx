@@ -32,7 +32,7 @@ export default function Home() {
 
                 <div className="mt-16" >
                   <Link href={`/products`}>
-                    <button className="bg-white-500 hover:bg-gray-100 bg-white font-bold py-2 px-4 rounded-md text-xl text-[#666] font-extrabold">
+                    <button className="bg-white-500 hover:bg-gray-100 bg-white font-bold py-2 px-4 rounded-md text-md text-[#666] font-extrabold">
                       Scopri tutti i nostri prodotti
                     </button>
                   </Link>

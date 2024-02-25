@@ -9,7 +9,7 @@ interface Product {
 }
 
 const ProductsList = (props: Props) => {
-  const { products, categoryId } = props;
+  const { products, categoryId, isLoadMore } = props;
 
   return (
     <div className="catalog-page">
@@ -20,7 +20,7 @@ const ProductsList = (props: Props) => {
               <ProductCard key={product.id} product={product} />
             ))
           ) : (
-            <div className="container">Nessun risultato</div>
+            <div className="container">{!isLoadMore && "Nessun risultato"}</div>
           )}
         </div>
       </div>

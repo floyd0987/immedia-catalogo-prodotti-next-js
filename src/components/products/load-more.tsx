@@ -44,7 +44,7 @@ export function LoadMore({ categoryId, price_min, price_max }) {
 
   return (
     <>
-      <ProductsList products={data} />
+      <ProductsList products={data} isLoadMore={true} />
       <div
         className="flex justify-center items-center p-4 col-span-1 sm:col-span-2 md:col-span-3"
         ref={ref}

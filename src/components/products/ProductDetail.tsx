@@ -16,11 +16,10 @@ type Props = {
 const ProductDetail = (props: Props) => {
   const { product } = props;
 
-  const imageURL = cleanUpImageUrl((product?.images?.[0]) || "");
-
+  const imageURL = cleanUpImageUrl(product?.images?.[0] || "");
 
   return (
-    <div className="mx-auto py-8">
+    <div className="mx-auto">
       <div className="md:flex md:justify-center">
         <div className="md:w-1/2 md:order-1 mb-4 md:mb-0">
           <div className="gallery-container">
@@ -42,15 +41,15 @@ const ProductDetail = (props: Props) => {
               <div className="text-xs my-2">Codice: {generateRandomCode()}</div>
               <div className="text-xs my-2">Garanzia: 24 mesi</div>
 
-              <p className="text-red-600 text-lg my-6">
+              {/* <p className="text-red-600 text-lg my-6">
                 {product.price?.toLocaleString("it-IT", {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
                 })}{" "}
                 €
-              </p>
+              </p> */}
 
-              <div className="text-[#509C50] text-sm py-3 flex gap-3 border-y	py-2">
+              <div className="text-[#509C50] text-sm flex gap-3 border-y	py-2 my-8">
                 <Image
                   src={Mask}
                   className="mx-2"
@@ -94,7 +93,7 @@ const ProductDetail = (props: Props) => {
         </div>
       </div>
 
-      <div className="px-40 my-10">
+      <div className="container my-10">
         <div className="font-extrabold text-3xl my-2">Descrizione</div>
 
         <div className="my-4">{product.description}</div>

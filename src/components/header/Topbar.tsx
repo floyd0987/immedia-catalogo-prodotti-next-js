@@ -29,7 +29,7 @@ const Topbar = () => {
       <nav className="bg-white py-2 border-b">
         <div className="container mx-auto">
           <div className="flex items-center justify-between ">
-            <div className="hidden md:block">
+            <div className=" md:block">
               <div className="text-xs flex items-baseline space-x-4">
                 {topbarItems.map((item, index) => {
                   return (
@@ -41,7 +41,7 @@ const Topbar = () => {
               </div>
             </div>
 
-            <div className="hidden md:block">
+            <div className=" md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <LanguageSwitcher />
               </div>
