@@ -8,6 +8,12 @@ interface Product {
   description: string;
 }
 
+interface Props {
+  products: Product[];
+  categoryId: number;
+  isLoadMore: boolean;
+}
+
 const ProductsList = (props: Props) => {
   const { products, categoryId, isLoadMore } = props;
 

@@ -2,7 +2,8 @@ import React from "react";
 import CategoryFilter from "./CategoryFilter";
 import PriceRangeFilter from "./PriceRangeFilter";
 
-const Filters = ({ categoryId }) => {
+
+const Filters: React.FC<{ categoryId: any }> = ({ categoryId }) => {
   return (
     <div>
     <div className="my-4">

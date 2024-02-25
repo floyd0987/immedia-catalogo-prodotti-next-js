@@ -11,7 +11,12 @@ import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
-export default function ProductGallery({ images }) {
+interface Props {
+  images: string[];
+}
+
+
+export default function ProductGallery({ images } : Props) {
   const [swiper, setSwiper] = useState(null);
 
   const [open, setOpen] = useState(false);

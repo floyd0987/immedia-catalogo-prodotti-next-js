@@ -1,7 +1,19 @@
 import Link from "next/link";
 import React from "react";
 
-const Breadcrumbs = ({ product }) => {
+interface Product {
+  category?: {
+    id: string;
+    name: string;
+  };
+  title: string;
+}
+
+interface BreadcrumbsProps {
+  product: Product;
+}
+
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ product }) => {
   return (
     <div className="text-xs text-gray-400 mb-4	">
       <Link href="/">Home</Link>

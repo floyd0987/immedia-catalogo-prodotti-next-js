@@ -8,7 +8,15 @@ import { Product } from "@/types";
 
 import ProductsList from "./ProductsList";
 
-export function LoadMore({ categoryId, price_min, price_max }) {
+export function LoadMore({
+  categoryId,
+  price_min,
+  price_max,
+}: {
+  categoryId: string | number;
+  price_min: number;
+  price_max: number;
+}) {
   const [data, setdata] = useState<Product[]>([]);
   const [page, setPage] = useState(0);
   const [showSpinner, setShowSpinner] = useState(true);
@@ -22,8 +30,8 @@ export function LoadMore({ categoryId, price_min, price_max }) {
     // Once the page 8 is reached repeat the process all over again.
     await delay(200);
     const nextPage = page + 1;
-    console.log("🚀 ~ loadMoreData ~ page:", page);
-    console.log("🚀 ~ loadMoreData ~ nextPage:", nextPage);
+    // console.log("🚀 ~ loadMoreData ~ page:", page);
+    // console.log("🚀 ~ loadMoreData ~ nextPage:", nextPage);
 
     const newProducts =
       (await getProducts(categoryId, price_min, price_max, nextPage)) ?? [];

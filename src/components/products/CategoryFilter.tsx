@@ -1,5 +1,5 @@
-"use client";
-import React, { use, useEffect, useState } from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   Select,
@@ -9,9 +9,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const CategoryFilter = (props: { categoryId: any }) => {
-  const { categoryId } = props;
-  const [categories, setCategories] = useState([]);
+interface Category {
+  id: number;
+  name: string;
+}
+
+interface Props {
+  categoryId: number | null;
+}
+
+const CategoryFilter: React.FC<Props> = ({ categoryId }) => {
+  const [categories, setCategories] = useState<Category[]>([]);
   const router = useRouter();
 
   useEffect(() => {
@@ -21,12 +29,12 @@ const CategoryFilter = (props: { categoryId: any }) => {
           "https://api.escuelajs.co/api/v1/categories"
         );
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Errore nella richiesta");
         }
         const data = await response.json();
         setCategories(data);
       } catch (error) {
-        console.error("Errore:", error);
+        console.error("Error:", error);
       }
     };
 
@@ -57,8 +65,8 @@ const CategoryFilter = (props: { categoryId: any }) => {
           Tutti
         </SelectItem>
 
-        {categories.map((category: any) => (
-          <SelectItem value={category.id} key={category.id}>
+        {categories.map((category) => (
+          <SelectItem value={String(category.id)} key={category.id}>
             {category.name}
           </SelectItem>
         ))}
