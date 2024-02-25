@@ -10,8 +10,8 @@ interface Product {
 
 interface Props {
   products: Product[];
-  categoryId: number;
-  isLoadMore: boolean;
+  categoryId: string | number;
+  isLoadMore?: boolean;
 }
 
 const ProductsList = (props: Props) => {

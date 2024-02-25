@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { cleanUpImageUrl, cn, generateRandomString } from "@/lib/utils";
 import "swiper/css";
@@ -15,9 +16,8 @@ interface Props {
   images: string[];
 }
 
-
-export default function ProductGallery({ images } : Props) {
-  const [swiper, setSwiper] = useState(null);
+export default function ProductGallery({ images }: Props) {
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
   const [open, setOpen] = useState(false);
 
@@ -72,7 +72,7 @@ export default function ProductGallery({ images } : Props) {
         <Lightbox
           open={open}
           close={() => setOpen(false)}
-          index = {swiper?.activeIndex}
+          index={swiper?.activeIndex}
           slides={slides}
           plugins={[Zoom]}
         />
@@ -86,7 +86,9 @@ export default function ProductGallery({ images } : Props) {
                 <li key={index}>
                   <button
                     onClick={() => {
-                      swiper.slideTo(index);
+                      if (swiper) {
+                        swiper.slideTo(index);
+                      }
                     }}
                     className="relative block h-300 w-300 overflow-hidden rounded-sm"
                   >
