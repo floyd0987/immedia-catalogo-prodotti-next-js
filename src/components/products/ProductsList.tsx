@@ -10,7 +10,7 @@ interface Product {
 
 interface Props {
   products: Product[];
-  categoryId: string | number;
+  categoryId?: string | number;
   isLoadMore?: boolean;
 }
 
