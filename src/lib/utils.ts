@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 
 
-export function cleanUpImageUrl(url) {
+export function cleanUpImageUrl(url: string) {
   url = url.replace(/\[|\]|"/g, "");
   url = url.startsWith("http") ? url : "";
 
@@ -40,7 +40,7 @@ export function generateRandomString() {
 }
 
 
-export function truncate(str, maxLength) {
+export function truncate(str: string, maxLength: number) {
   if (str.length <= maxLength) {
       return str;
   } else {
