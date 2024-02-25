@@ -16,6 +16,10 @@ interface PageProps {
   };
 }
 
+interface BreadcrumbsProps {
+  categoryName: string;
+}
+
 const ProductCategory = async ({ params, searchParams }: PageProps) => {
   const { categoryId } = params;
   const { price_min, price_max } = searchParams;
@@ -49,7 +53,7 @@ const ProductCategory = async ({ params, searchParams }: PageProps) => {
 
 export default ProductCategory;
 
-const Breadcrumbs = ({ categoryName }) => {
+const Breadcrumbs = ({ categoryName }: BreadcrumbsProps) => {
   return (
     <div className="text-xs text-gray-400 mb-4	">
       <Link href="/">Home</Link>
