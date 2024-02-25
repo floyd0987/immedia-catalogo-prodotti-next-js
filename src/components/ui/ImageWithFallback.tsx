@@ -2,18 +2,34 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const ImageWithFallback = ({ fallbackImage, alt, src, ...props }) => {
-  const [error, setError] = useState(null);
+interface ImageWithFallbackProps {
+  fallbackImage: string;
+  alt: string;
+  src: string;
+  [x: string]: any;
+}
+
+const ImageWithFallback = ({
+  fallbackImage,
+  alt,
+  src,
+  ...props
+}: ImageWithFallbackProps) => {
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    setError(null);
+    setError(false);
   }, [src]);
+
+  const handleImageError = () => {
+    setError(true);
+  };
 
   return (
     <div className="relative">
       <Image
         alt={alt}
-        onError={setError}
+        onError={handleImageError}
         src={error ? fallbackImage : src}
         {...props}
       />
