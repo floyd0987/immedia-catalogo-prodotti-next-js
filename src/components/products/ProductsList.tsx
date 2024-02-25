@@ -3,9 +3,9 @@ import ProductCard from "./ProductCard";
 
 interface Product {
   id: number;
-  image: string;
-  title: string;
-  description: string;
+  image?: string;
+  title?: string;
+  description?: string;
 }
 
 interface Props {

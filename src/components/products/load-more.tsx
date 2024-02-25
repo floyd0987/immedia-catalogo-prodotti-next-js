@@ -27,11 +27,9 @@ export function LoadMore({
     new Promise((resolve) => setTimeout(resolve, ms));
 
   const loadMoreData = async () => {
-    // Once the page 8 is reached repeat the process all over again.
+
     await delay(200);
     const nextPage = page + 1;
-    // console.log("🚀 ~ loadMoreData ~ page:", page);
-    // console.log("🚀 ~ loadMoreData ~ nextPage:", nextPage);
 
     const newProducts =
       (await getProducts(categoryId, price_min, price_max, nextPage)) ?? [];
