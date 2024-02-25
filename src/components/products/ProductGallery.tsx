@@ -43,7 +43,7 @@ export default function ProductGallery({ images }: Props) {
 
             return (
               <SwiperSlide key={index}>
-                <div className="flex h-full w-full items-center justify-centerx relative">
+                <div className="w-full h-full  items-center justify-centerx relative">
                   <ImageWithFallback
                     className="block h-full w-full object-cover"
                     src={imageURL}
